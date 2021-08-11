@@ -5,10 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import JsxBasics from './components/JsxBasics'
+import Comment from './components/Comments'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
     <JsxBasics />
+    <Comment />
   </React.StrictMode>,
   document.getElementById('root')
 );
