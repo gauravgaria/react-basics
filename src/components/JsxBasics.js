@@ -13,10 +13,11 @@ function JsxBasics(){
     const basicObject = {name:'Gaurav', age: 28}                // Objects accessed by (.)
 
     const style = {backgroundColor:'blue', color:'white'};      // comment 1
-
+                                                                
+                                                                // in label attribute or is replaced with htmlFor in JSX
     return(
         <div>
-            <label>Enter your name </label>
+            <label className = "label" htmlFor = "name" >Enter your name </label> 
             <input type = {{text:'text', placeHolder:'First Name'}} />  
             <button style = {style}>{buttonText} {number}</button>
             <div>{list}</div>
