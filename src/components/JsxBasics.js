@@ -16,7 +16,7 @@ function JsxBasics(){
 
     return(
         <div>
-            <label>Enter your name </label>
+            <label>Enter your name now</label>
             <input type = {{text:'text', placeHolder:'First Name'}} />  
             <button style = {style}>{buttonText} {number}</button>
             <div>{list}</div>
