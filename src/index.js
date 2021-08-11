@@ -4,9 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import JsxBasics from './components/JsxBasics'
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <JsxBasics />
   </React.StrictMode>,
   document.getElementById('root')
 );
