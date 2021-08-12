@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from '../logo.svg'
 const getTime = () =>{
     return new Date().toLocaleTimeString();
 }
@@ -9,7 +9,7 @@ const Comment = () =>{
         <div className="ui container comments">
             <div className="comment">
                 <a href="/" className="avatar">
-                    <img alt="avatar"/>
+                    <img alt="avatar" src={Image}/>
                 </a>
             </div>
             <div className="content">
