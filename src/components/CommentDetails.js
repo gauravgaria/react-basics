@@ -5,7 +5,6 @@ const getTime = () => {
 };
 
 const CommentDetails = (props) => {
-  console.log(props);
   return (
     <div>
       <div className="comment">

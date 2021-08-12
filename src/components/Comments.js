@@ -9,6 +9,11 @@ const Comment = () => {
   return (
     <div className="ui container comments">
       <ApprovalCard>
+        {/*Now ApprovalCard component can be reused any no of times we want for different purposes  */}
+        <div>Component reusage do you agree.?</div>
+      </ApprovalCard>
+
+      <ApprovalCard>
         <CommentDetails
           author="Gaurav"
           text="Nice Blog"
