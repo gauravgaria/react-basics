@@ -1,26 +1,20 @@
 import React from 'react'
 import Image from '../logo.svg'
-const getTime = () =>{
-    return new Date().toLocaleTimeString();
-}
+import CommentDetails from './CommentDetails';
+
+
+/*  props-> (propName = "value") 
+*/ 
 
 const Comment = () =>{
     return(
         <div className="ui container comments">
-            <div className="comment">
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={Image}/>
-                </a>
-            </div>
-            <div className="content">
-                <a href="/" className="author">Gaurav</a>
-                <div className="metadata">
-                    <span className="date">Today at {getTime()}</span>
-                </div>
-                <div className="text">Nice Post, was very helpful</div>
-            </div>
+            <CommentDetails author="Gaurav" text="Nice Blog" img= {Image}/> 
+            <CommentDetails author="Nimesh" text="Your blog was quite helpful" img= {Image}/>
+            <CommentDetails author="Shilpa" text="Amazing blog" img= {Image}/>
+            <CommentDetails author="Deepesh" text="nice blog dude" img= {Image}/>
         </div>
     );
-}
+};
 
 export default Comment
