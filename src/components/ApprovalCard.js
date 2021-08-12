@@ -1,5 +1,9 @@
 import React from "react";
 
+/*  Accessing component within component 
+    ApprovalCard is the parent component of CommentDetails component and to traverse into child we do -> props.children
+ */
+
 const ApprovalCard = (props) => {
   console.log(props);
   return (
