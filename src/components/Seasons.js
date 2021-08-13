@@ -7,15 +7,26 @@ class Seasons extends React.Component {
                         Hence to get some functionalities of the parent class super() is used.
                         | super() -> reference to parent class constructor | 
                         Note: Not using super() will give error message.
+
+                       | NOTE |: Using constructor is optional as |state = {lat:'null'} | will create same constructor by "babel".
+                                                  |
+                                                  |
+                                                  V
+                       constructor(props) {
+                            super(props);
+                            this.state = { lat: null, long: null, errorMessage: "" }; 
+                        }
     */
 
-  constructor(props) {
-    super(props);
+  state = { lat: null, long: null, errorMessage: "" }; // state initialization(1) -> Now state can be referenced anywhere in the class
 
-    this.state = { lat: null, long: null, errorMessage: "" }; // state initialization(1) -> Now state can be referenced anywhere in the class
+  /** |Best practices| -> It is best that state changes are not done inside the constructor and only initialization to be done there,
+   *                    acc to code conventions of React.
+   *                    1) more easy to understand and systematic.
+   */
 
+  componentDidMount() {
     // Calling geolocation in render will be calling this method each time.
-
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         this.setState({
@@ -23,9 +34,7 @@ class Seasons extends React.Component {
           long: position.coords.longitude,
         }); // state updation(2) -> setState() updates data
       },
-      (err) => {
-        this.setState({ errorMessage: err.message });
-      }
+      (err) => this.setState({ errorMessage: err.message })
     );
   }
 
