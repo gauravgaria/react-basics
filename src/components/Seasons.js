@@ -1,10 +1,10 @@
 import React from "react";
 
 class Seasons extends React.Component {
-  // constructor() function will called first before anything else,when instance of this Class is called
+  // constructor() function will be called first before anything else,when instance of this Class is called
 
   /*  super(props) -> When constructor is called it overrides the properties of Parent Class, 
-                        Hence to get some functionalities of the parent class is used.
+                        Hence to get some functionalities of the parent class super() is used.
                         | super() -> reference to parent class constructor | 
                         Note: Not using super() will give error message.
     */
@@ -21,7 +21,7 @@ class Seasons extends React.Component {
         this.setState({
           lat: position.coords.latitude,
           long: position.coords.longitude,
-        }); // state updation -> setState() updates data
+        }); // state updation(2) -> setState() updates data
       },
       (err) => {
         this.setState({ lat: err.message, long: err.message });
@@ -30,7 +30,7 @@ class Seasons extends React.Component {
   }
 
   /* render() In this class render() called two times,
-              1-> when page is refreshed and permission is asked(here it show null)
+              1-> when page is refreshed and permission is asked(here it shows null)
               2-> Then as soon as user performs any action it renders it again in split seconds(here whatever value that comes from backend)
    */
 
