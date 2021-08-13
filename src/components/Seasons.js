@@ -12,7 +12,7 @@ class Seasons extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { lat: null, long: null }; // state initialization(1) -> Now state can be referenced anywhere in the class
+    this.state = { lat: null, long: null, errorMessage: "" }; // state initialization(1) -> Now state can be referenced anywhere in the class
 
     // Calling geolocation in render will be calling this method each time.
 
@@ -24,7 +24,7 @@ class Seasons extends React.Component {
         }); // state updation(2) -> setState() updates data
       },
       (err) => {
-        this.setState({ lat: err.message, long: err.message });
+        this.setState({ errorMessage: err.message });
       }
     );
   }
@@ -35,12 +35,25 @@ class Seasons extends React.Component {
    */
 
   render() {
-    return (
-      <div>
-        <h2>Latitude: {this.state.lat}</h2>
-        <h2>longitude: {this.state.long}</h2>
-      </div>
-    );
+    /*  Conditional Rendering 
+        Note:Don't forget to return after is conditional statement
+    */
+
+    if (this.state.errorMessage && !this.state.lat) {
+      // !this.state.lat => not having lat values
+      return <h2>Error: {this.state.errorMessage}</h2>;
+    }
+
+    if (!this.state.errorMessage && this.state.lat) {
+      return (
+        <div>
+          <h2>Latitude: {this.state.lat} </h2>
+          <h2>Longitude: {this.state.long} </h2>
+        </div>
+      );
+    }
+
+    return <div>Loading......</div>;
   }
 }
 
