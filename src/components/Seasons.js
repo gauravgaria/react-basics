@@ -1,4 +1,5 @@
 import React from "react";
+import SeasonDisplay from "./SeasonDisplay";
 
 class Seasons extends React.Component {
   // constructor() function will be called first before anything else,when instance of this Class is called
@@ -54,12 +55,7 @@ class Seasons extends React.Component {
     }
 
     if (!this.state.errorMessage && this.state.lat) {
-      return (
-        <div>
-          <h2>Latitude: {this.state.lat} </h2>
-          <h2>Longitude: {this.state.long} </h2>
-        </div>
-      );
+      return <SeasonDisplay lat={this.state.lat} long={this.state.long} />;
     }
 
     return <div>Loading......</div>;
