@@ -6,12 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 
 import JsxBasics from "./components/JsxBasics";
 import Comment from "./components/Comments";
+import Seasons from "./components/Seasons";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/*<App />
     <JsxBasics />
-    <Comment />
+    <Comment />*/}
+    <Seasons />
   </React.StrictMode>,
   document.getElementById("root")
 );
