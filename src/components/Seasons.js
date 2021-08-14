@@ -1,5 +1,6 @@
 import React from "react";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 class Seasons extends React.Component {
   // constructor() function will be called first before anything else,when instance of this Class is called
@@ -58,7 +59,7 @@ class Seasons extends React.Component {
       return <SeasonDisplay lat={this.state.lat} long={this.state.long} />;
     }
 
-    return <div>Loading......</div>;
+    return <Spinner />; // Using Spinner.js -> it can be reused anywhere again
   }
 }
 

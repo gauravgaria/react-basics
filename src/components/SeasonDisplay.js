@@ -16,9 +16,9 @@ const SeasonDisplay = (props) => {
   const season = getSeason(props.lat, new Date().getMonth);
   return (
     <div>
-      <p className={`text-left ${season}`}>Season Display</p>{" "}
+      <p>Season Display</p>
       {/*${variable} direct assignment -> here season returns string winter/summer */}
-      <h2>{season}</h2>
+      <h3 className={`text-left ${season}`}>{season}</h3>
     </div>
   );
 };
