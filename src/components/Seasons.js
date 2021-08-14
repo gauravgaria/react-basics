@@ -40,16 +40,11 @@ class Seasons extends React.Component {
     );
   }
 
-  /* render() In this class render() called two times,
-              1-> when page is refreshed and permission is asked(here it shows null)
-              2-> Then as soon as user performs any action it renders it again in split seconds(here whatever value that comes from backend)
-   */
-
-  render() {
-    /*  Conditional Rendering 
+  /*  Conditional Rendering and renderComponent() -> avoid applying same css for each condition
         Note:Don't forget to return after is conditional statement
     */
 
+  renderComponent() {
     if (this.state.errorMessage && !this.state.lat) {
       // !this.state.lat => not having lat values
       return <h2>Error: {this.state.errorMessage}</h2>;
@@ -60,6 +55,17 @@ class Seasons extends React.Component {
     }
 
     return <Spinner message="Please accept user location" />; // Using Spinner.js -> it can be reused anywhere again
+  }
+
+  /* render() In this class render() called two times,
+              1-> when page is refreshed and permission is asked(here it shows null)
+              2-> Then as soon as user performs any action it renders it again in split seconds(here whatever value that comes from backend)
+   */
+
+  render() {
+    /*  renderComponent() -> this will call renderComponent() and be applied for all conditions in it.
+     */
+    return <div style={{ border: "red" }}>{this.renderComponent()}</div>;
   }
 }
 
