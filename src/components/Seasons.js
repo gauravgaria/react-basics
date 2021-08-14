@@ -59,7 +59,7 @@ class Seasons extends React.Component {
       return <SeasonDisplay lat={this.state.lat} long={this.state.long} />;
     }
 
-    return <Spinner />; // Using Spinner.js -> it can be reused anywhere again
+    return <Spinner message="Please accept user location" />; // Using Spinner.js -> it can be reused anywhere again
   }
 }
 
